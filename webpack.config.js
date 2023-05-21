@@ -4,10 +4,9 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const ReactRefreshWebpackPlugin = require("@pmmmwh/react-refresh-webpack-plugin");
 
-const mode = process.env.NODE_ENV || "production";
+const mode = process.env.NODE_ENV || "development";
 const devMode = mode === "development";
 const target = devMode ? "web" : "browserslist"
-
 const devtool = devMode ? "source-map" : undefined;
 
 const plugins = devMode
@@ -22,8 +21,8 @@ const plugins = devMode
 
 module.exports = {
     mode,
-    devtool,
     target,
+    devtool,
     entry: [path.resolve(__dirname, 'src', 'index.tsx')],
     output: {
         path: path.resolve(__dirname, "dist"),
@@ -55,7 +54,6 @@ module.exports = {
                 use: [
                     devMode ? "style-loader" : MiniCssExtractPlugin.loader,
                     "css-loader",
-                    "postcss-loader",
                     "resolve-url-loader",
                     {
                         loader: 'sass-loader',
@@ -92,6 +90,14 @@ module.exports = {
     },
     resolve: {
         extensions: [".tsx", ".ts", ".js", ".jsx"],
+        alias: {
+            '@components': path.resolve(__dirname, 'src', 'components'),
+            '@hooks': path.resolve(__dirname, 'src', 'hooks'),
+            '@models': path.resolve(__dirname, 'src', 'models'),
+            '@store': path.resolve(__dirname, 'src', 'store'),
+            '@helpers': path.resolve(__dirname, 'src', 'helpers'),
+            '@services': path.resolve(__dirname, 'src', 'services'),
+        }
     },
     optimization: {
         minimizer: [

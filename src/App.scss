@@ -1,5 +1,6 @@
 @use 'styles/normalize';
-@use 'styles/fonts/_index.scss';
+@import "~bootstrap/scss/bootstrap";
+
 
 * {
   margin: 0;

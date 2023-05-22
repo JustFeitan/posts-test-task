@@ -3,7 +3,7 @@ import {Route, Routes} from "react-router-dom";
 import PostsPage from "../pages/PostsPage";
 import AboutMePage from "../pages/AboutMePage";
 import MyPostsPage from "../pages/MyPostsPage";
-import Layout from "../pages/Layout";
+import Layout from "../pages/Layout/Layout";
 
 const AppRouter = () => {
     return (

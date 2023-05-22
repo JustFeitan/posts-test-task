@@ -5,9 +5,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import {BrowserRouter} from "react-router-dom";
 import {ThemeProvider} from "react-bootstrap";
 import {Provider} from "react-redux";
-import {setStore} from "./store";
+import {setStore, store} from "@store";
 
-const store = setStore();
+
 
 const root = ReactDOM.createRoot(
     document.getElementById("root") as HTMLElement,

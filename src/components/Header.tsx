@@ -6,7 +6,7 @@ const Header: FC = () => {
         <Container fluid className='bg-light p-4'>
                     <Navbar bg="light" expand={false} className="mb-3">
                         <Container fluid>
-                            <Navbar.Brand href="#">Posts test task</Navbar.Brand>
+                            <Navbar.Brand href="/">Posts test task</Navbar.Brand>
                             <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-false`} />
                             <Navbar.Offcanvas
                                 id={`offcanvasNavbar-expand-false`}

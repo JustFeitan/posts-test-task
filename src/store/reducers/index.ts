@@ -1,7 +1,7 @@
-import {authReducer} from "./authSlice";
-import {notificationsApi} from "@services/notificationsApi";
+import {postsReducer} from "@store/reducers/postsSlice";
+import {commentsReducer} from "@store/reducers/commentsSlice";
 
 export const reducers = {
-    authReducer,
-    [notificationsApi.reducerPath]: notificationsApi.reducer
+    postsReducer,
+    commentsReducer,
 }

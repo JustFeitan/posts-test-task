@@ -3,6 +3,8 @@ import {Col, Row} from "react-bootstrap";
 import AvatarIcon from "@components/UI/Icons/AvatarIcon";
 import PostComments from "@components/PostComments";
 import {Post} from "@models";
+import {useNavigate} from "react-router-dom";
+import {AppRoutes} from "../../../routing/AppRoutes";
 
 
 interface PostItemProps {
@@ -10,11 +12,17 @@ interface PostItemProps {
 }
 
 const PostItem: FC<PostItemProps> = ({post}) => {
+
+    const navigate = useNavigate();
+
+    const goToPostDetails = () => {
+        navigate('/posts/' + post.userId)
+    }
     return (
         <Row className='border-bottom '>
             {/*Post module*/}
             <Row className='flex-nowrap my-1' xs={"auto"}>
-                <Col className='d-flex align-items-center'>
+                <Col className='d-flex align-items-center' onClick={goToPostDetails}>
                     <AvatarIcon/>
                 </Col>
                 <Col className='d-flex align-items-center'>

@@ -28,13 +28,14 @@ module.exports = {
         path: path.resolve(__dirname, "dist"),
         filename: "index.[contenthash].js",
         clean: true,
-        assetModuleFilename: "assets/[hash][ext]"
+        assetModuleFilename: "assets/[hash][ext]",
+        publicPath: "/"
     },
     devServer: {
         port: 3000,
         hot: true,
-        open: true,
-        historyApiFallback: true,
+        open: false,
+        historyApiFallback: true
     },
     plugins: [
         new HtmlWebpackPlugin({

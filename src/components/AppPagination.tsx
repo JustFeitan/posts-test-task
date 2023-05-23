@@ -1,31 +1,42 @@
-import React, {FC} from 'react';
+import React, {FC, useEffect, useState} from 'react';
 import {Pagination} from "react-bootstrap";
+import {useAppPagination} from "@hooks/useAppPagination";
 
 interface PaginationProps {
     pagesArray: number[];
-    onPageClick: (pageNumber: number) => void;
-    currentPage: number;
+    onPageClick: (currentPage: number) => void;
 }
 
-const AppPagination: FC<PaginationProps> = ({pagesArray, onPageClick, currentPage}) => {
+const AppPagination: FC<PaginationProps> = ({pagesArray, onPageClick, }) => {
+
+    const {currentPage, setCurrentPage, goToPrevPage, goToNextPage} = useAppPagination();
+
+    useEffect(() => {
+        onPageClick(currentPage);
+    }, [currentPage])
+
     return (
         <>
             {pagesArray && !!pagesArray.length &&
-                <Pagination className='justify-content-around w-75'>
-                    <Pagination.Prev/>
+                <Pagination className='justify-content-around w-75 m-2'>
+                    <Pagination.Prev
+                    onClick={() => goToPrevPage()}
+                    />
                     {
                         pagesArray.map(pageNumber =>
                             <Pagination.Item
-                                onClick={() => onPageClick(pageNumber)}
+                                onClick={() => setCurrentPage(pageNumber + 1)}
                                 key={pageNumber}
-                                active={currentPage === pageNumber}
+                                active={currentPage === pageNumber + 1}
 
                             >
-                                {pageNumber}
+                                {pageNumber + 1}
                             </Pagination.Item>
                         )
                     }
-                    <Pagination.Next/>
+                    <Pagination.Next
+                        onClick={() => goToNextPage()}
+                    />
                 </Pagination>
             }
         </>

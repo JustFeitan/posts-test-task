@@ -16,12 +16,12 @@ const PostItem: FC<PostItemProps> = ({post}) => {
                 <Col className='d-flex align-items-center'>
                     <AvatarIcon/>
                 </Col>
-                <Col>
-                    <h2 className='h5'>{post.title}</h2>
+                <Col className='d-flex align-items-center'>
+                    <h2 className='h5 m-0'>{post.title}</h2>
                 </Col>
             </Row>
             <Row key={post.id}>
-                <p>{post.body}</p>
+                <p className='mx-4 my-2'>{post.body}</p>
             </Row>
             {/*Post comments*/}
             <PostComments post={post}/>

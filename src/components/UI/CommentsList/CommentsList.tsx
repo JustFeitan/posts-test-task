@@ -1,6 +1,8 @@
 import React, {FC} from 'react';
 import Loader from "@components/UI/Loader";
 import {CommentsData} from "@models/CommentsData";
+import CommentsListItem from "@components/UI/CommentsList/CommentsListItem";
+import {Stack} from "react-bootstrap";
 
 interface CommentsListProps {
     currentPostComments: CommentsData
@@ -13,17 +15,13 @@ const CommentsList:FC<CommentsListProps> = ({currentPostComments}) => {
             {
                 currentPostComments?.isLoading
                     ? <Loader/>
-                    : <>
+                    : <Stack gap={2} className='mx-4 my-2'>
                         {
                             currentPostComments?.comments?.map(comment =>
-                                <div key={comment.id}>
-                                    {comment.postId} <br/>
-                                    {comment.email} <br/>
-                                    {comment.body} <br/>
-                                </div>
+                                <CommentsListItem  key={comment.id} comment={comment}/>
                             )
                         }
-                    </>
+                    </Stack>
             }
         </>
     );

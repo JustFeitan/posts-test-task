@@ -1,6 +1,6 @@
 import {createSlice, PayloadAction} from "@reduxjs/toolkit";
-import {Comment} from "@models/Comment";
-import {CommentsData} from "@models/CommentsData";
+import {Comment,CommentsData} from "@models";
+
 
 
 interface CommentsState {

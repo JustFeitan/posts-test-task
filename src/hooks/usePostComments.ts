@@ -2,7 +2,7 @@ import {useAppSelector} from "@hooks/redux/useAppSelector";
 import {findPostComments} from "@store/reducers/commentsSlice/selectors/findPostComments";
 import {useActions} from "@hooks/redux/useActions";
 import {commentsActions} from "@store/reducers/commentsSlice";
-import {Post} from "@models/Post";
+import {Post} from "@models";
 import {useRef} from "react";
 
 export const usePostComments = (post: Post) => {

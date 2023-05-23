@@ -1,8 +1,9 @@
 import React, {FC} from 'react';
 import {Col, Row} from "react-bootstrap";
 import AvatarIcon from "@components/UI/Icons/AvatarIcon";
-import {Post} from "@models/Post";
 import PostComments from "@components/PostComments";
+import {Post} from "@models";
+
 
 interface PostItemProps {
     post: Post;

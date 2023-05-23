@@ -2,11 +2,11 @@ import {call, put, takeLatest} from "redux-saga/effects";
 import {postsActions} from "@store/reducers/postsSlice";
 import {AxiosResponse} from "axios";
 import {postsService} from "@services/postsService";
-import {Post} from "@models/Post";
+import {Post,QueryParams} from "@models";
 import {isErrorWithMessage, toAxiosError} from "@helpers/isErrorWithMessage";
 import {getPagesArray, totalPagesCount} from "@helpers/pages";
 import {PayloadAction} from "@reduxjs/toolkit";
-import {QueryParams} from "@models/QueryParams";
+
 
 
 export function* getPosts({payload: {page, limit}}: PayloadAction<QueryParams>) {

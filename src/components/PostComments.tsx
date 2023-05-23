@@ -1,7 +1,7 @@
 import React, {FC, useEffect, useState} from 'react';
 import {Button, Collapse} from "react-bootstrap";
 import {usePostComments} from "@hooks/usePostComments";
-import {Post} from "@models/Post";
+import {Post} from "@models";
 import CommentsList from "@components/UI/CommentsList/CommentsList";
 
 interface PostCommentsProps {

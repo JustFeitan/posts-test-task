@@ -1,5 +1,5 @@
 import axios from "axios";
-import {Post} from "@models/Post";
+import {Post} from "@models";
 const delay = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
 export const postsService = {
     async getPosts(page: number, limit?: number) {

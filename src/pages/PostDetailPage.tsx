@@ -1,6 +1,8 @@
 import React, {FC} from 'react';
 
-const MyPostsPage: FC = () => {
+const PostDetailPage: FC = () => {
+
+
     return (
         <div>
             MyPostsPage
@@ -8,4 +10,4 @@ const MyPostsPage: FC = () => {
     );
 };
 
-export default MyPostsPage;
+export default PostDetailPage;

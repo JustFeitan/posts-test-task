@@ -1,8 +1,5 @@
-
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
-import {Post} from "@models/Post";
-import {AxiosResponse} from "axios";
-import {QueryParams} from "@models/QueryParams";
+import {Post, QueryParams} from "@models";
 
 
 interface PostsState {

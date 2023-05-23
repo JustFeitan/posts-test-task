@@ -16,11 +16,13 @@
     "allowSyntheticDefaultImports": true,
     "lib": ["es5", "es6", "dom", "dom.iterable"],
     "paths": {
+      "@store":["src/store"],
+      "@models":["src/models/index"],
+
       "@components/*": ["src/components/*"],
       "@hooks/*": ["src/hooks/*"],
       "@models/*":["src/models/*"],
       "@store/*":["src/store/*"],
-      "@store":["src/store"],
       "@helpers/*":["src/helpers/*"],
       "@services/*":["src/services/*"],
     }

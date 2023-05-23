@@ -66,7 +66,6 @@ module.exports = {
             {
                 test: /\.(png|jpe?g|gif|svg|webp|ico)$/i,
                 type: devMode ? "asset/resource" : "asset",
-
             },
             {
                 test: /\.tsx?$/i,

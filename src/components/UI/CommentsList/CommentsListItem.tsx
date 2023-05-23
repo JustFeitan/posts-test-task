@@ -1,5 +1,5 @@
 import React, {FC} from 'react';
-import {Comment} from "@models/Comment";
+import {Comment} from "@models";
 import {Row} from "react-bootstrap";
 
 interface CommentsListItem {

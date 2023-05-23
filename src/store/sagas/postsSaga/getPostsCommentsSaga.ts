@@ -4,7 +4,7 @@ import {isErrorWithMessage, toAxiosError} from "@helpers/isErrorWithMessage";
 import {commentsActions} from "@store/reducers/commentsSlice";
 import {postsService} from "@services/postsService";
 import {AxiosResponse} from "axios";
-import {Comment} from "@models/Comment";
+import {Comment} from "@models";
 
 
 export function* getPostComments({payload: id}: PayloadAction<number>) {

@@ -1,6 +1,6 @@
 import React, {FC} from 'react';
 import Loader from "@components/UI/Loader";
-import {CommentsData} from "@models/CommentsData";
+import {CommentsData} from "@models";
 import CommentsListItem from "@components/UI/CommentsList/CommentsListItem";
 import {Stack} from "react-bootstrap";
 

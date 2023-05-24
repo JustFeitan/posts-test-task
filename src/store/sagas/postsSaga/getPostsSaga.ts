@@ -13,10 +13,10 @@ export function* getPosts({payload: {page, limit}}: PayloadAction<QueryParams>) 
     try {
         yield put(postsActions.setPostsLoading());
         console.log(limit)
-        const postsResposne: AxiosResponse<Post[]> = yield call(postsService.getPosts, page, limit);
-        const totalPages = totalPagesCount(postsResposne.headers['x-total-count'], limit)
+        const postsResponse: AxiosResponse<Post[]> = yield call(postsService.getPosts, page, limit);
+        const totalPages = totalPagesCount(postsResponse.headers['x-total-count'], limit)
         const pagesArray = getPagesArray(totalPages)
-        yield put(postsActions.setPosts(postsResposne.data));
+        yield put(postsActions.setPosts(postsResponse.data));
         yield put(postsActions.setPagesArray(pagesArray));
     } catch (e) {
         const AxiosError = toAxiosError(e);

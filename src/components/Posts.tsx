@@ -7,7 +7,10 @@ import {scrollToWindowTop} from "@helpers/scroll/scrollToWindowTop";
 
 const Posts: FC = () => {
 
-    const {postReducer: {posts, pagesArray, isLoading}, loadPosts} = usePostsList();
+    const {
+        postReducer: {posts, pagesArray, isLoading},
+        postActions: {loadPosts}
+    } = usePostsList();
 
     const chooseCurrentPageHandler = (currentPage: number) => {
         loadPosts({page: currentPage})
@@ -15,7 +18,7 @@ const Posts: FC = () => {
     }
 
     return (
-        <Container className='d-flex flex-column justify-content-center align-items-center'>
+        <Container className='min-vh-100 d-flex flex-column justify-content-between align-items-center'>
             <h1 className='my-2 h2'>Posts</h1>
             <PostsList posts={posts} isLoading={isLoading}/>
             <AppPagination

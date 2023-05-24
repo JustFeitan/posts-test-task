@@ -1,4 +1,4 @@
-import React, {FC, useEffect, useState} from 'react';
+import React, {FC, useEffect} from 'react';
 import {Pagination} from "react-bootstrap";
 import {useAppPagination} from "@hooks/useAppPagination";
 
@@ -7,20 +7,23 @@ interface PaginationProps {
     onPageClick: (currentPage: number) => void;
 }
 
-const AppPagination: FC<PaginationProps> = ({pagesArray, onPageClick, }) => {
+const AppPagination: FC<PaginationProps> = ({pagesArray, onPageClick,}) => {
 
     const {currentPage, setCurrentPage, goToPrevPage, goToNextPage} = useAppPagination();
 
     useEffect(() => {
         onPageClick(currentPage);
     }, [currentPage])
-
+    console.log(pagesArray)
     return (
-        <>
+        <Pagination className='justify-content-around w-75 m-2'>
+            {
+                !pagesArray && null
+            }
             {pagesArray && !!pagesArray.length &&
-                <Pagination className='justify-content-around w-75 m-2'>
+                <>
                     <Pagination.Prev
-                    onClick={() => goToPrevPage()}
+                        onClick={() => goToPrevPage()}
                     />
                     {
                         pagesArray.map(pageNumber =>
@@ -37,9 +40,11 @@ const AppPagination: FC<PaginationProps> = ({pagesArray, onPageClick, }) => {
                     <Pagination.Next
                         onClick={() => goToNextPage()}
                     />
-                </Pagination>
+                </>
             }
-        </>
+
+        </Pagination>
+
     );
 };
 

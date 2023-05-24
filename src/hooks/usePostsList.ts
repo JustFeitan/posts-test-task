@@ -4,6 +4,6 @@ import {postsActions} from "@store/reducers/postsSlice";
 
 export const usePostsList = () => {
     const postReducer = useAppSelector(state => state.postsReducer);
-    const {loadPosts} = useActions(postsActions)
-    return {postReducer, loadPosts}
+    const postActions = useActions(postsActions)
+    return {postReducer, postActions}
 }

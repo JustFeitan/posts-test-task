@@ -1,10 +1,11 @@
-import axios from "axios";
-import {Post} from "@models";
-const delay = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
+import axios, {AxiosResponse} from "axios";
+import {Post, QueryParams} from "@models";
+
+const delay = (ms: number = 500) => new Promise(resolve => setTimeout(resolve, ms));
 export const postsService = {
     async getPosts(page: number, limit?: number) {
-        await delay(1000);
-        return await axios.get<Post[]>('https://jsonplaceholder.typicode.com/posts', {
+        await delay();
+        return await axios.get<AxiosResponse<Post[]>>('https://jsonplaceholder.typicode.com/posts', {
             params: {
                 _limit: limit || 10,
                 _page: page
@@ -13,7 +14,17 @@ export const postsService = {
     },
 
     async getCommentsByPostId(id: number) {
-        await delay(1000);
-        return await axios.get<Comment[]>('https://jsonplaceholder.typicode.com/comments?postId=' + id)
-    }
+        await delay();
+        return await axios.get<AxiosResponse<Comment[]>>('https://jsonplaceholder.typicode.com/comments?postId=' + id)
+    },
+    async getUserPostsByUserId(userId: number, queryParams?: QueryParams) {
+        await delay();
+        return await axios.get<AxiosResponse<Post[]>>('https://jsonplaceholder.typicode.com/posts?', {
+            params: {
+                userId: userId,
+                _limit: queryParams?.limit | 10,
+                _page: queryParams?.page | 1
+            }
+        })
+    },
 }

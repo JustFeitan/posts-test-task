@@ -11,7 +11,7 @@ interface PostsListProps {
 
 const PostsList: FC<PostsListProps> = ({posts, isLoading}) => {
     return (
-        <Container className='min-vh-100'>
+        <Container>
             {isLoading
                 ? <Loader/>
                 : <Stack gap={3} className='py-2'>

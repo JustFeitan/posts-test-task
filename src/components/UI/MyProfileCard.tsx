@@ -22,11 +22,12 @@ const MyProfileCard: FC = () => {
                         задачи и находить решения. <br/>
                         В данный момент ищу работу и параллельно занимаюсь изучением нового, выполняю
                         тестовые задания и делаю пет проект с вышеописанными технологиями -<br/>
-                        Деплой версия - https://animagach.netlify.app<br/>
-                        https://github.com/JustFeitan/anime-list. (бэк может быть в слип моде надо
+                        Деплой версия - <a href="https://animagach.netlify.app">https://animagach.netlify.app</a><br/>
+                        <a href="https://github.com/JustFeitan/anime-list">https://github.com/JustFeitan/anime-list</a>
+                        (бэк может быть в слип моде надо
                         подождать 10-20 секунд)<br/>
                         Во время учебы пол года участвовал в open source проекте с Angular -
-                        https://github.com/Reckue/post-ui.<br/>
+                        <a href="https://github.com/Reckue/post-ui">https://github.com/Reckue/post-ui</a>.<br/>
                         Важно для меня: работа в команде, хорошая мотивационная система, хороший
                         коллектив.
                     </Card.Text>

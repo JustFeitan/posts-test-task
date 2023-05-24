@@ -1,19 +1,19 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
-import {Post, QueryParams} from "@models";
+import {Post, QueryParams, UserPostsRequest} from "@models";
 
 
 interface PostsState {
     posts: Post[];
-    pagesArray: number[];
+    pagesArray: number[] | null;
     isLoading: boolean;
-    error: string;
+    error: Error | null | string | object;
 }
 
 const initialState: PostsState = {
     posts: [],
-    pagesArray: [],
+    pagesArray: null,
     isLoading: false,
-    error: "",
+    error: null,
 };
 
 export const postsSlice = createSlice({
@@ -32,11 +32,14 @@ export const postsSlice = createSlice({
         setPostsLoading: (state) => {
             state.isLoading = true;
         },
-        setPostsError: (state, action: PayloadAction<string>) => {
+        setPostsError: (state, action: PayloadAction<Error | null | string| object>) => {
             state.error = action.payload;
             state.isLoading = false;
         },
         loadPosts: (state, action: PayloadAction<QueryParams>) => {
+
+        },
+        getUserPostsByUserId: (state, action: PayloadAction<UserPostsRequest>) => {
 
         },
 

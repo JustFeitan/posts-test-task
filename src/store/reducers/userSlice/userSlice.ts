@@ -23,7 +23,7 @@ export const userSlice = createSlice({
                 state.user = action.payload;
                 state.isLoading = false;
             },
-            setUserLoading: (state, action) => {
+            setUserLoading: (state) => {
                 state.isLoading = true;
             },
             setUserError: (state, action:PayloadAction<Error>) => {

@@ -1,9 +1,9 @@
 import React, {FC} from 'react';
 import {Col, Row} from "react-bootstrap";
 import AvatarIcon from "@components/UI/Icons/AvatarIcon";
-import PostComments from "@components/PostComments";
 import {Post} from "@models";
 import {useNavigate} from "react-router-dom";
+import PostComments from "@components/Posts/PostComments";
 import {AppRoutes} from "../../../routing/AppRoutes";
 
 
@@ -16,7 +16,7 @@ const PostItem: FC<PostItemProps> = ({post}) => {
     const navigate = useNavigate();
 
     const goToPostDetails = () => {
-        navigate('/posts/' + post.userId)
+        navigate(AppRoutes.USERS + post.userId)
     }
     return (
         <Row className='border-bottom '>

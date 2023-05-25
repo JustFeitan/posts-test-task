@@ -32,11 +32,14 @@ export const postsSlice = createSlice({
         setPostsLoading: (state) => {
             state.isLoading = true;
         },
-        setPostsError: (state, action: PayloadAction<Error | null | string| object>) => {
+        setPostsError: (state, action: PayloadAction<Error | null | string>) => {
             state.error = action.payload;
             state.isLoading = false;
         },
-        loadPosts: (state, action: PayloadAction<QueryParams>) => {
+               loadPosts: (state, action: PayloadAction<QueryParams>) => {
+
+        },
+        getPostsByTitleSearch: (state, action: PayloadAction<QueryParams>) => {
 
         },
         getUserPostsByUserId: (state, action: PayloadAction<UserPostsRequest>) => {

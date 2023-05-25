@@ -12,12 +12,15 @@ interface PostsListProps {
 const PostsList: FC<PostsListProps> = ({posts, isLoading}) => {
     return (
         <Container>
-            {isLoading
+            { (isLoading !== undefined) && isLoading
                 ? <Loader/>
                 : <Stack gap={3} className='py-2'>
-                    {posts.map(post =>
-                        <PostItem key={post.id} post={post}/>
-                    )}
+                    {posts?.length
+                        ? posts.map(post =>
+                            <PostItem key={post.id} post={post}/>
+                        )
+                        : <h3 className='fs-4 text-center'>Постов не найдено</h3>
+                    }
                 </Stack>
             }
         </Container>

@@ -10,11 +10,9 @@ import {getPagesArray, totalPagesCount} from "@helpers/pages";
 
 export function* getUserPostsByUserIdSaga({payload: {userId, queryParams}}: PayloadAction<UserPostsRequest>) {
     try {
-        console.log(queryParams)
         yield put(postsActions.setPostsLoading());
         const postsResponse: AxiosResponse<Post[]> = yield call(postsService.getUserPostsByUserId, userId, queryParams);
         const totalPages = totalPagesCount(postsResponse.headers['x-total-count'], queryParams?.limit);
-
         const pagesArray = getPagesArray(totalPages)
         yield put(postsActions.setPosts(postsResponse?.data))
         yield put(postsActions.setPagesArray(pagesArray));

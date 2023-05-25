@@ -2,13 +2,15 @@ import {watchGetPosts} from "@store/sagas/postsSaga/getPostsSaga";
 import {all, call, spawn} from "redux-saga/effects";
 import {watchGetPostComments} from "@store/sagas/postsSaga/getPostsCommentsSaga";
 import {watchGetUserPostsByUserIdSaga} from "@store/sagas/postsSaga/getUserPostsByUserIdSaga";
+import {watchGetPostsByTitleSearchSaga} from "@store/sagas/postsSaga/getPostsByTitleSearchSaga";
 
 
 export function* postsSaga() {
     const postsSagas = [
-        watchGetPosts,
+        //watchGetPosts,
         watchGetPostComments,
-        watchGetUserPostsByUserIdSaga
+        watchGetUserPostsByUserIdSaga,
+        watchGetPostsByTitleSearchSaga
     ]
 
     yield all(

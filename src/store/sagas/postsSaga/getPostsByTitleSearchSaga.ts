@@ -9,15 +9,16 @@ import {PayloadAction} from "@reduxjs/toolkit";
 
 
 
-export function* getPosts({payload: queryParams}: PayloadAction<QueryParams>) {
+export function* getPostsByTitleSearchSaga({payload: queryParams}: PayloadAction<QueryParams>) {
     try {
         yield put(postsActions.setPostsLoading());
-        const postsResponse: AxiosResponse<Post[]> = yield call(postsService.getPosts, queryParams);
-        const totalPages = totalPagesCount(postsResponse.headers['x-total-count'], queryParams.limit)
+        const postsResponse: AxiosResponse<Post[]> = yield call(postsService.getPostsByTitleSearch, queryParams);
+        const totalPages = totalPagesCount(postsResponse.headers['x-total-count'], queryParams?.limit)
         const pagesArray = getPagesArray(totalPages)
         yield put(postsActions.setPosts(postsResponse.data));
         yield put(postsActions.setPagesArray(pagesArray));
     } catch (e) {
+        console.log(e)
         const AxiosError = toAxiosError(e);
         if (isErrorWithMessage(AxiosError.response!.data)) {
             yield put(postsActions.setPostsError(AxiosError.response!.data.message));
@@ -25,6 +26,6 @@ export function* getPosts({payload: queryParams}: PayloadAction<QueryParams>) {
     }
 }
 
-export function* watchGetPosts() {
-    yield takeLatest(postsActions.loadPosts, getPosts);
+export function* watchGetPostsByTitleSearchSaga() {
+    yield takeLatest(postsActions.getPostsByTitleSearch, getPostsByTitleSearchSaga);
 }

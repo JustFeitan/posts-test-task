@@ -3,7 +3,6 @@ import {User} from "@models";
 import Loader from "@components/UI/Loader";
 import {Card} from "react-bootstrap";
 import AvatarIcon from "@components/UI/Icons/AvatarIcon";
-import PostsList from "@components/UI/PostsList/PostsList";
 
 interface UserProfileProps {
     isUserLoading: boolean;
@@ -20,22 +19,31 @@ const UserCard: FC<UserProfileProps> = ({user, isUserLoading, userPosts}) => {
                     ? <Loader/>
                     :
                     <>
-                        <Card.Header style={{width: '100%'}} className='d-flex flex-column'>
-                            <AvatarIcon size={136}/>
-                            <Card.Title className='my-2'>
-                                {user?.name}
-                                <span className=' mx-2 fs-6 fw-normal'>
+                        {
+                            user && user.name
+                                ?
+                                <>
+                                    <Card.Header style={{width: '100%'}} className='d-flex flex-column'>
+                                        <AvatarIcon size={136}/>
+                                        <Card.Title className='my-2'>
+                                            {user?.name}
+                                            <span className=' mx-2 fs-6 fw-normal'>
                                     @{user?.username}
                                 </span>
-                            </Card.Title>
+                                        </Card.Title>
 
-                            <Card.Subtitle className='fs-6 fw-normal'>
-                                Email: {user?.email}
-                            </Card.Subtitle>
-                        </Card.Header>
-                        <Card.Body style={{width: '100%'}}>
-                            {userPosts}
-                        </Card.Body>
+                                        <Card.Subtitle className='fs-6 fw-normal'>
+                                            Email: {user?.email}
+                                        </Card.Subtitle>
+                                    </Card.Header>
+                                    <Card.Body style={{width: '100%'}}>
+                                        {userPosts}
+                                    </Card.Body>
+                                </>
+
+                                : <h3 className='fs-4 text-center'>Пользователь не найден</h3>
+                        }
+
                     </>
             }
         </Card>

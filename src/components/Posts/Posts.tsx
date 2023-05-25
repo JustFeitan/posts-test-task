@@ -1,12 +1,12 @@
 import React, {FC, useEffect} from 'react';
 import PostsList from "@components/UI/PostsList/PostsList";
-import AppPagination from "@components/AppPagination";
 import {Container} from "react-bootstrap";
 import {usePostsList} from "@hooks/usePostsList";
 import {scrollToWindowTop} from "@helpers/scroll/scrollToWindowTop";
 import SearchPostsInput from "@components/Posts/SearchPostsInput";
 import PostsSorting from "@components/Posts/PostsSorting";
 import {SortingOrder} from "@models/SortingOrder";
+import AppPagination from "@components/UI/AppPagination/AppPagination";
 
 
 const Posts: FC = () => {

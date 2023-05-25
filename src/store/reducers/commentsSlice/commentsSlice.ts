@@ -3,7 +3,7 @@ import {Comment,CommentsData} from "@models";
 
 
 
-interface CommentsState {
+export interface CommentsState {
     commentsData: CommentsData[];
 }
 

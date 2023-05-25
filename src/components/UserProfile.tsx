@@ -28,7 +28,6 @@ const UserProfile: FC = () => {
         setQueryParams
     } = usePostsList()
 
-    console.log(isPostsLoading);
     useEffect(() => {
 
         getUser(+userId);

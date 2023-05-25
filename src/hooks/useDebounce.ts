@@ -5,8 +5,6 @@ export function useDebounce<T>(value: T, delay: number) {
     const [forcedDebounce, setForcedDebounce] = useState<boolean>(false);
 
     useEffect(() => {
-        console.log(forcedDebounce)
-
         if (forcedDebounce)return
         const timerId = setTimeout(() => {
             setDebounceValue(value)

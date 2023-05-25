@@ -1,6 +1,7 @@
 import React, {FC, useEffect} from 'react';
 import {Pagination} from "react-bootstrap";
 import {useAppPagination} from "@hooks/useAppPagination";
+import './Pagination.scss';
 
 interface PaginationProps {
     isPageLoading?: boolean;

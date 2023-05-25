@@ -2,15 +2,15 @@ import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 import {Post, QueryParams, UserPostsRequest} from "@models";
 
 
-interface PostsState {
-    posts: Post[];
+export interface PostsState {
+    posts: Post[] | null;
     pagesArray: number[] | null;
     isLoading: boolean;
     error: Error | null | string | object;
 }
 
 const initialState: PostsState = {
-    posts: [],
+    posts: null,
     pagesArray: null,
     isLoading: false,
     error: null,

@@ -11,6 +11,7 @@ export const useSearchPostsInput = (onInputChange: (debouncedValue: string) => v
     }
 
     const cleanInput = () => {
+        setSearchInput('')
         forceDebounce('')
     }
 

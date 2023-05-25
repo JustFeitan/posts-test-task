@@ -1,9 +1,12 @@
+/**@jest-environment jsdom
+ *
+ */
 import React, {JSX} from "react";
 import {AppStore, setStore} from "@store";
-import {render} from "@testing-library/react";
 import {Provider} from "react-redux";
 import {MemoryRouter} from "react-router-dom";
 import AppRouter from "../routing/AppRouter";
+import {render} from "@testing-library/react";
 
 interface renderTestAppOptions {
     route?: string;
@@ -11,7 +14,7 @@ interface renderTestAppOptions {
 }
 
 export const renderTestApp = (
-    component?: JSX.Element,
+    component?: JSX.Element | null,
     params?: renderTestAppOptions
 ) => {
     const store = setStore(params?.initialReduxState)

@@ -12,7 +12,7 @@ interface PostsListProps {
 const PostsList: FC<PostsListProps> = ({posts, isLoading}) => {
     return (
         <Container>
-            { (isLoading !== undefined) && isLoading
+            { isLoading && !posts
                 ? <Loader/>
                 : <Stack gap={3} className='py-2'>
                     {posts?.length

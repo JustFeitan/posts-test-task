@@ -5,7 +5,7 @@ import UserProfile from "@components/UserProfile";
 const UserDetailsPage: FC = () => {
 
     return (
-        <Container className='w-75 d-flex justify-content-center'>
+        <Container data-testid='user-details-page' className='w-75 d-flex justify-content-center'>
             <UserProfile/>
         </Container>
     );

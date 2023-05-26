@@ -36,9 +36,6 @@ export const postsSlice = createSlice({
             state.error = action.payload;
             state.isLoading = false;
         },
-               loadPosts: (state, action: PayloadAction<QueryParams>) => {
-
-        },
         getPostsByTitleSearch: (state, action: PayloadAction<QueryParams>) => {
 
         },

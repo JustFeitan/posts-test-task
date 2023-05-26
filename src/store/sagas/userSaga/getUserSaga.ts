@@ -14,7 +14,7 @@ export function* getUser({payload: userId}: PayloadAction<number>) {
         yield put(userActions.setUser(...userResponse.data))
     } catch (e) {
        if(isErrorWithMessage(e)) {
-           yield put(userActions.setUserError(e.data.message))
+           yield put(userActions.setUserError(e.message))
        }
 
     }

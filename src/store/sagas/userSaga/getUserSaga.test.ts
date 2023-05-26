@@ -14,7 +14,6 @@ jest.mock('axios')
 
 describe('getUserSaga tests', () => {
     const dispatched: Action[] = []
-    let url: string;
     let response: Partial<AxiosResponse<User[]>>;
     let responseWithError: Partial<AxiosResponse<Error>>;
     let fakeStore: any;

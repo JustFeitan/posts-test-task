@@ -2,19 +2,19 @@
 
 Web приложение для переписки, сделанное на основе ватсапа.
 Сылка на развернутую на хостинге версию(
-Netify): 
+Netify): [https://posts-test-task.netlify.app](https://posts-test-task.netlify.app)
 
 ## Инструкции для локального запуска:
 
 ### Docker:
 
-1. `git clone https://github.com/JustFeitan/posts-test-project.git`;
+1. `git clone https://github.com/JustFeitan/posts-test-task.git`;
 2. `docker-compose up`
 3. Перейти на `https://localhost:3000`
 
 ### Без докера:
 
-1. `git clone https://github.com/JustFeitan/posts-test-project.git`;
+1. `git clone https://github.com/JustFeitan/posts-test-task.git`;
 2. `npm i`
 3. `npm start`
 4.  Перейти на `https://localhost:3000`

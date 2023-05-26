@@ -15,14 +15,18 @@ const MyProfileCard: FC = () => {
                 <Row>
                     <span className='fw-semibold my-1'>Обо мне: </span>
                     <Card.Text>
-                        Уже больше года изучаю и занимаюсь разработкой на React + Typescript + Redux,
-                        также обладаю навыками unit тестирования, адаптивной верстки, знаю Sass и БЭМ,
-                        знаком с gitflow имею базовое понимание от создания ветки до пулреквеста, также
-                        могу написать базовую конфигурацию Webpack. Способен самостоятельно выполнять
+                        Уже больше года изучаю и занимаюсь разработкой на <b>React + Typescript + Redux</b>,
+                        также обладаю навыками <b>unit тестирования</b>, адаптивной верстки, знаю <b>Sass</b> и <b>БЭМ</b>,
+                        знаком с <b>gitflow</b> имею базовое понимание от создания ветки до пулреквеста, также
+                        могу написать базовую конфигурацию <b>Webpack</b> и <b>Docker</b>. Способен самостоятельно выполнять
                         задачи и находить решения. <br/>
+                        Также уже выполнял тестовое задание c использованием <b>redux-saga</b>:<br/>
+                        Приложение для поиска отелей демо(демо):
+                        <a href="https://simple-hotels-check.netlify.app">https://simple-hotels-check.netlify.app</a><br/>
+                        Github репозиторий: <a href="https://github.com/JustFeitan/simple-hotel-check">ссылка</a> <br/>
                         В данный момент ищу работу и параллельно занимаюсь изучением нового, выполняю
                         тестовые задания и делаю пет проект с вышеописанными технологиями -<br/>
-                        Деплой версия - <a href="https://animagach.netlify.app">https://animagach.netlify.app</a><br/>
+                        Деплой версия - <br/>
                         <a href="https://github.com/JustFeitan/anime-list">https://github.com/JustFeitan/anime-list</a>
                         (бэк может быть в слип моде надо
                         подождать 10-20 секунд)<br/>

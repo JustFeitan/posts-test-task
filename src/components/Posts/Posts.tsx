@@ -33,8 +33,8 @@ const Posts: FC = () => {
     }
 
     const handleSearchInputChange = (debouncedValue: string) => {
-        setQueryParams(prevState => ({...prevState, like: debouncedValue}))
-        getPostsByTitleSearch({...queryParams, like: debouncedValue})
+        setQueryParams(prevState => ({...prevState, like: debouncedValue, page: 1}))
+        getPostsByTitleSearch({...queryParams, like: debouncedValue, page: 1})
     }
 
     return (

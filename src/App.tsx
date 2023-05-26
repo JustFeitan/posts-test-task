@@ -4,9 +4,6 @@ import AppRouter from "./routing/AppRouter";
 
 const App = () => {
 
-    useEffect(() => {
-        document.title = "Posts"
-    }, [])
     return (
        <AppRouter/>
     );

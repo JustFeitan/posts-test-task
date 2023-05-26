@@ -2,3 +2,19 @@
 .main-container {
     min-height: calc(100vh - #{variables.$header-height});
 }
+
+@media (min-width : 950px) {
+    .main-container {
+        width: 960px;
+
+    }
+}
+
+@media (max-width : 550px) {
+    .main-container {
+        padding: 0;
+    & > .card-body {
+        padding: 0;
+    }
+    }
+}

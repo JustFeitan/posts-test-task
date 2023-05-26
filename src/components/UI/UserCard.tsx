@@ -20,7 +20,7 @@ const UserCard: FC<UserProfileProps> = ({ user, isUserLoading, userPosts }) => {
     return (
         <Card
             style={{ width: "100%" }}
-            className="p-4 my-3 d-flex align-items-center"
+            className="py-3 px-3 my-3 d-flex align-items-center"
         >
             {isUserLoading ? (
                 <Loader />

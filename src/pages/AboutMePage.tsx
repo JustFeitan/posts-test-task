@@ -7,7 +7,7 @@ const AboutMePage: FC = () => {
     return (
         <Container
             data-testid="about-me-page"
-            className="w-75 d-flex justify-content-center align-items-center"
+            className="d-flex justify-content-center align-items-center"
         >
             <MyProfileCard />
         </Container>

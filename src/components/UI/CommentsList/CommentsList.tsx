@@ -16,7 +16,7 @@ const CommentsList: FC<CommentsListProps> = ({ currentPostComments }) => {
             {currentPostComments?.isLoading ? (
                 <Loader />
             ) : (
-                <Stack gap={2} className="mx-4 my-2">
+                <Stack gap={2} className="m-2 d-flex" >
                     {currentPostComments?.comments?.map((comment) => (
                         <CommentsListItem key={comment.id} comment={comment} />
                     ))}

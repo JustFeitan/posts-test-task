@@ -17,7 +17,7 @@ const PostsList: FC<PostsListProps> = ({ posts, isLoading }) => {
             {isLoading ? (
                 <Loader />
             ) : (
-                <Stack gap={3} className="py-2">
+                <Stack gap={3} className="py-2 px-4">
                     {posts?.length ? (
                         posts.map((post) => (
                             <PostItem key={post.id} post={post} />

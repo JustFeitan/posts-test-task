@@ -20,17 +20,17 @@ const PostItem: FC<PostItemProps> = ({ post }) => {
         navigate(AppRoutes.USERS + post.userId);
     };
     return (
-        <Row className="border-bottom ">
+        <Row className="border-bottom " >
             {/*Post module*/}
-            <Row className="flex-nowrap my-1" xs={"auto"}>
+            <Row className="flex-nowrap my-1"  xs='auto'>
                 <Col
                     className="d-flex align-items-center"
                     onClick={goToPostDetails}
                 >
                     <AvatarIcon />
                 </Col>
-                <Col className="d-flex align-items-center">
-                    <h2 className="h5 m-0">{post.title}</h2>
+                <Col  className="d-flex flex-wrap align-items-center">
+                    <h2 className="h5 m-0 d-flex flex-wrap">{post.title}</h2>
                 </Col>
             </Row>
             <Row key={post.id}>

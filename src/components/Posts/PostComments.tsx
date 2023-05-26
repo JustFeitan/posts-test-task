@@ -36,7 +36,7 @@ const PostComments: FC<PostCommentsProps> = ({ post }) => {
                 aria-controls="example-collapse-text"
                 aria-expanded={showComments}
                 variant="light"
-                className="dropdown-toggle w-25 m-2"
+                className="dropdown-toggle w-auto m-2"
             >
                 Комменатрии
             </Button>

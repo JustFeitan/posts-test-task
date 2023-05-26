@@ -7,7 +7,8 @@ const UserDetailsPage: FC = () => {
     return (
         <Container
             data-testid="user-details-page"
-            className="w-75 d-flex justify-content-center"
+            className=" d-flex justify-content-center"
+            fluid='sm'
         >
             <UserProfile />
         </Container>

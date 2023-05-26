@@ -5,7 +5,7 @@ import Posts from "@components/Posts/Posts";
 
 const PostsPage: FC = () => {
     return (
-        <Container data-testid="posts-page" className="w-75">
+        <Container data-testid="posts-page" >
             <Posts />
         </Container>
     );

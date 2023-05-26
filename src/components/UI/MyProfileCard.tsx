@@ -45,7 +45,11 @@ const MyProfileCard: FC = () => {
                         В данный момент ищу работу и параллельно занимаюсь
                         изучением нового, выполняю тестовые задания и делаю пет
                         проект с вышеописанными технологиями -<br />
-                        Деплой версия - <br />
+                        Деплой версия -
+                        <a href="https://animagach.netlify.app">
+                            https://animagach.netlify.app
+                        </a><br />
+                        Github репозиторий:{" "}
                         <a href="https://github.com/JustFeitan/anime-list">
                             https://github.com/JustFeitan/anime-list
                         </a>

@@ -3,6 +3,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const ReactRefreshWebpackPlugin = require("@pmmmwh/react-refresh-webpack-plugin");
+const CopyPlugin = require("copy-webpack-plugin");
 
 const mode = process.env.NODE_ENV || "development";
 const devMode = mode === "development";
@@ -10,12 +11,20 @@ const target = devMode ? "web" : "browserslist"
 const devtool = devMode ? "source-map" : undefined;
 
 const plugins = devMode
-    ?[
-        new ReactRefreshWebpackPlugin()
+    ? [
+        new ReactRefreshWebpackPlugin(),
     ]
     : [
         new MiniCssExtractPlugin({
             filename: "index.[contenthash].css"
+        }),
+        new CopyPlugin({
+            patterns: [
+                {
+                    from: path.resolve(__dirname, 'public', '_redirects'),
+                    to: path.resolve(__dirname, "dist", 'public'),
+                }
+            ]
         })
     ]
 
@@ -23,7 +32,9 @@ module.exports = {
     mode,
     target,
     devtool,
-    entry: [path.resolve(__dirname, 'src', 'index.tsx')],
+    entry: [
+        path.resolve(__dirname, 'src', 'index.tsx'),
+    ],
     output: {
         path: path.resolve(__dirname, "dist"),
         filename: "index.[contenthash].js",

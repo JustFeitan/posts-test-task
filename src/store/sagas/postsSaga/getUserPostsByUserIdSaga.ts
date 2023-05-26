@@ -17,10 +17,8 @@ export function* getUserPostsByUserIdSaga({payload: {userId, queryParams}}: Payl
         yield put(postsActions.setPosts(postsResponse?.data))
         yield put(postsActions.setPagesArray(pagesArray));
     } catch (e) {
-        console.log(e)
-        const AxiosError = toAxiosError(e);
-        if (isErrorWithMessage(AxiosError.response)) {
-            yield put(postsActions.setPostsError(AxiosError.response?.data.message));
+        if (isErrorWithMessage(e)) {
+            yield put(postsActions.setPostsError(e.data.message));
         }
     }
 }

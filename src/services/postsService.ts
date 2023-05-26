@@ -20,11 +20,11 @@ export const postsService = {
 
     async getCommentsByPostId(id: number) {
         await delay();
-        return await axios.get<AxiosResponse<Comment[]>>('https://jsonplaceholder.typicode.com/comments?postId=' + id)
+        return await axios.get('https://jsonplaceholder.typicode.com/comments?postId=' + id)
     },
     async getUserPostsByUserId(userId: number, queryParams?: QueryParams) {
         await delay();
-        return await axios.get<AxiosResponse<Post[]>>('https://jsonplaceholder.typicode.com/posts?', {
+        return await axios.get('https://jsonplaceholder.typicode.com/posts?', {
             params: {
                 title_like: queryParams?.like || null,
                 userId: userId,

@@ -13,12 +13,11 @@ export function* getPostComments({payload: id}: PayloadAction<number>) {
         const commentsResponse: AxiosResponse<Comment[]> = yield call(postsService.getCommentsByPostId, id);
         yield put(commentsActions.setComments(commentsResponse.data));
     } catch (e) {
-        const AxiosError = toAxiosError(e);
-        if (isErrorWithMessage(AxiosError.response)) {
 
+        if (isErrorWithMessage(e)) {
             yield put(commentsActions.setCommentsError({
                 postId: id,
-                error: AxiosError.response!.data.message
+                error: e.data.message
             }));
         }
     }

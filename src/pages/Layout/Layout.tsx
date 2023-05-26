@@ -10,7 +10,7 @@ const Layout: FC = () => {
     return (
         <Container fluid className="p-0">
             <Header />
-            <Container className="main-container d-flex">
+            <Container className="main-container d-flex my-4">
                 <Outlet />
             </Container>
         </Container>

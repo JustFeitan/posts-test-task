@@ -2,10 +2,10 @@ import {createSlice, PayloadAction} from "@reduxjs/toolkit";
 import {reducers} from "@store/reducers";
 import {User} from "@models/User";
 
-interface UserState {
+export interface UserState {
     user: User | null;
     isLoading: boolean;
-    error: Error | null;
+    error: Error | string | null;
 }
 
 const initialState: UserState = {
@@ -26,7 +26,7 @@ export const userSlice = createSlice({
             setUserLoading: (state) => {
                 state.isLoading = true;
             },
-            setUserError: (state, action:PayloadAction<Error>) => {
+            setUserError: (state, action:PayloadAction<Error | string | null>) => {
                 state.error = action.payload
                 state.isLoading = false;
             },

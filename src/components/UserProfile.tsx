@@ -11,6 +11,7 @@ import {AppRoutes} from "../routing/AppRoutes";
 import PostsSorting from "@components/Posts/PostsSorting";
 import SearchPostsInput from "@components/Posts/SearchPostsInput";
 import {SortingOrder} from "@models/SortingOrder";
+import {userSelector} from "@store/reducers/userSlice/selectors/userSelector";
 
 
 const UserProfile: FC = () => {
@@ -19,7 +20,7 @@ const UserProfile: FC = () => {
     const navigate = useNavigate()
 
     const {getUser} = useActions(userActions);
-    const {user, isLoading: isUserLoading} = useAppSelector(state => state.userReducer);
+    const {user, isLoading: isUserLoading} = useAppSelector(userSelector);
 
     const {
         postReducer: {posts, isLoading: isPostsLoading,},
@@ -29,7 +30,6 @@ const UserProfile: FC = () => {
     } = usePostsList()
 
     useEffect(() => {
-
         getUser(+userId);
     }, [])
 

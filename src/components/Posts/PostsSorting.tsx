@@ -9,7 +9,7 @@ interface PostsSortingProps {
 
 const PostsSorting: FC<PostsSortingProps> = ({onSortOrderChange}) => {
 
-    const {sortPostsBy} = usePostSorting(onSortOrderChange)
+    const {sortPostsBy, sortingOrder} = usePostSorting(onSortOrderChange)
 
     const handleSortByTitle = () => {
         sortPostsBy('title')
@@ -23,7 +23,11 @@ const PostsSorting: FC<PostsSortingProps> = ({onSortOrderChange}) => {
                 onClick={handleSortByTitle}
             >
                 Заголовок
-                <i className="bi bi-sort-alpha-down"></i>
+                {
+                    sortingOrder === "ASC"
+                        ? <i className="bi bi-sort-alpha-down"></i>
+                        : <i className="bi bi-sort-alpha-up-alt"></i>
+                }
             </Button>
         </Row>
     );

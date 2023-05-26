@@ -22,7 +22,7 @@ const plugins = devMode
             patterns: [
                 {
                     from: path.resolve(__dirname, 'public', '_redirects'),
-                    to: path.resolve(__dirname, "dist", 'public'),
+                    to: path.resolve(__dirname, "dist"),
                 }
             ]
         })

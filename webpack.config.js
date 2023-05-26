@@ -15,7 +15,7 @@ const plugins = devMode
     ]
     : [
         new MiniCssExtractPlugin({
-            filename: "index[contenthash].css"
+            filename: "index.[contenthash].css"
         })
     ]
 
@@ -78,14 +78,7 @@ module.exports = {
                     },
 
                 },
-            },
-            {
-                test: /\.(woff2?|eot|ttf|otf)$/i,
-                type: 'asset/resource',
-                generator: {
-                    filename: 'fonts/[name][ext]'
-                }
-            },
+            }
         ],
     },
     resolve: {

@@ -14,7 +14,7 @@ export function* getPostComments({payload: id}: PayloadAction<number>) {
         yield put(commentsActions.setComments(commentsResponse.data));
     } catch (e) {
         const AxiosError = toAxiosError(e);
-        if (isErrorWithMessage(AxiosError.response!.data)) {
+        if (isErrorWithMessage(AxiosError.response)) {
 
             yield put(commentsActions.setCommentsError({
                 postId: id,

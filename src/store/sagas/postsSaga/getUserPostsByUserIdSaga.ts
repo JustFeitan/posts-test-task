@@ -19,7 +19,7 @@ export function* getUserPostsByUserIdSaga({payload: {userId, queryParams}}: Payl
     } catch (e) {
         console.log(e)
         const AxiosError = toAxiosError(e);
-        if (isErrorWithMessage(AxiosError.response?.data)) {
+        if (isErrorWithMessage(AxiosError.response)) {
             yield put(postsActions.setPostsError(AxiosError.response?.data.message));
         }
     }

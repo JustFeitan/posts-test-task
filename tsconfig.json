@@ -18,6 +18,7 @@
     "paths": {
       "@store":["src/store"],
       "@models":["src/models/index"],
+      "@services":["src/services"],
 
       "@components/*": ["src/components/*"],
       "@hooks/*": ["src/hooks/*"],

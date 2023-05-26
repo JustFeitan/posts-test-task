@@ -19,7 +19,7 @@ export function* getPosts({payload: queryParams}: PayloadAction<QueryParams>) {
         yield put(postsActions.setPagesArray(pagesArray));
     } catch (e) {
         const AxiosError = toAxiosError(e);
-        if (isErrorWithMessage(AxiosError.response!.data)) {
+        if (isErrorWithMessage(AxiosError.response)) {
             yield put(postsActions.setPostsError(AxiosError.response!.data.message));
         }
     }

@@ -19,14 +19,14 @@ const PostsSorting: FC<PostsSortingProps> = ({onSortOrderChange}) => {
         <Row xs='auto' className='d-flex w-100 flex-nowrap align-items-center'>
             <span>Сортировка:</span>
             <Button
-                className='w-25 btn-light d-flex justify-content-around'
+                className='btn-light d-flex justify-content-around'
                 onClick={handleSortByTitle}
             >
-                Заголовок
+                <span>Заголовок</span>
                 {
                     sortingOrder === "ASC"
-                        ? <i className="bi bi-sort-alpha-down"></i>
-                        : <i className="bi bi-sort-alpha-up-alt"></i>
+                        ? <i className="bi bi-sort-alpha-down" style={{marginLeft: '7px'}}></i>
+                        : <i className="bi bi-sort-alpha-up-alt"  style={{marginLeft: '7px'}}></i>
                 }
             </Button>
         </Row>

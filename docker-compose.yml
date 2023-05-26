@@ -1,19 +1,19 @@
-version: '3.9'
+version: "3.9"
 services:
-  posts:
-    image: posts-i
-    container_name: posts-c
-    build:
-      context: .
-      dockerfile: Dockerfile
-    ports:
-      - "3000:3000"
-    volumes:
-      - .:/posts-test-project
-      - node_modules:/posts-test-project/node_modules
-    environment:
-      NODE_ENV: development
-    command: sh -c "npm start"
+    posts:
+        image: posts-i
+        container_name: posts-c
+        build:
+            context: .
+            dockerfile: Dockerfile
+        ports:
+            - "3000:3000"
+        volumes:
+            - .:/posts-test-project
+            - node_modules:/posts-test-project/node_modules
+        environment:
+            NODE_ENV: development
+        command: sh -c "npm start"
 
 volumes:
-  node_modules:
+    node_modules:

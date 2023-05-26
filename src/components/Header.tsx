@@ -1,27 +1,31 @@
-import React, {FC, useState} from 'react';
-import {Col, Container, Image, Nav, Navbar, Offcanvas, Row, Stack} from "react-bootstrap";
-import {Link} from "react-router-dom";
-import {AppRoutes} from "../routing/AppRoutes";
-import myUserAvatar from '../assets/avatar.png';
-import UserAvatar from "@components/UI/UserAvatar";
+import React, { FC, useState } from "react";
+import { Container, Nav, Navbar, Offcanvas } from "react-bootstrap";
+import { Link } from "react-router-dom";
+
 import ProfileHeader from "@components/UI/ProfileHeader";
 
-const Header: FC = () => {
+import { AppRoutes } from "../routing/AppRoutes";
 
+const Header: FC = () => {
     const [showOffCanvas, setShowOffCanvas] = useState<boolean>(false);
     const handleCloseOffCanvas = () => setShowOffCanvas(false);
     const handleShowOffCanvas = () => setShowOffCanvas(true);
 
-
     return (
-        <Container fluid className='bg-light p-4'>
+        <Container fluid className="bg-light p-4">
             <Navbar bg="light" expand={false} className="mb-3">
                 <Container fluid>
-                    <Navbar.Brand className='fs-2' as={Link} to={AppRoutes.POSTS}>
+                    <Navbar.Brand
+                        className="fs-2"
+                        as={Link}
+                        to={AppRoutes.POSTS}
+                    >
                         Posts test task
                     </Navbar.Brand>
-                    <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-false`}
-                                   onClick={handleShowOffCanvas}/>
+                    <Navbar.Toggle
+                        aria-controls={`offcanvasNavbar-expand-false`}
+                        onClick={handleShowOffCanvas}
+                    />
                     <Navbar.Offcanvas
                         show={showOffCanvas}
                         onHide={handleCloseOffCanvas}
@@ -30,8 +34,10 @@ const Header: FC = () => {
                         placement="start"
                     >
                         <Offcanvas.Header closeButton>
-                            <Offcanvas.Title id={`offcanvasNavbarLabel-expand-false`}>
-                                <ProfileHeader/>
+                            <Offcanvas.Title
+                                id={`offcanvasNavbarLabel-expand-false`}
+                            >
+                                <ProfileHeader />
                             </Offcanvas.Title>
                         </Offcanvas.Header>
                         <Offcanvas.Body>
@@ -40,7 +46,7 @@ const Header: FC = () => {
                                     as={Link}
                                     to={AppRoutes.POSTS}
                                     onClick={handleCloseOffCanvas}
-                                    className='btn btn-light my-1'
+                                    className="btn btn-light my-1"
                                 >
                                     Список постов
                                 </Nav.Link>
@@ -48,7 +54,7 @@ const Header: FC = () => {
                                     onClick={handleCloseOffCanvas}
                                     as={Link}
                                     to={AppRoutes.ABOUT_ME}
-                                    className='btn btn-light my-1'
+                                    className="btn btn-light my-1"
                                 >
                                     Обо мне
                                 </Nav.Link>

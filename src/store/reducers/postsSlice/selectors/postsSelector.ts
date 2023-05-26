@@ -1,3 +1,4 @@
-import {AppStore} from "@store";
+import { AppStore } from "@store";
 
-export const postsSelector = (state: Partial<AppStore>) => state?.postsReducer?.posts || null
+export const postsSelector = (state: Partial<AppStore>) =>
+    state?.postsReducer?.posts || null;

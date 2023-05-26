@@ -1,17 +1,23 @@
-import React, {FC, useEffect, useState} from 'react';
-import {Button, Collapse} from "react-bootstrap";
-import {usePostComments} from "@hooks/usePostComments";
-import {Post} from "@models";
+import React, { FC, useEffect, useState } from "react";
+import { Button, Collapse } from "react-bootstrap";
+
 import CommentsList from "@components/UI/CommentsList/CommentsList";
 
+import { usePostComments } from "@hooks/usePostComments";
+
+import { Post } from "@models";
+
 interface PostCommentsProps {
-    post: Post
+    post: Post;
 }
 
-const PostComments: FC<PostCommentsProps> = ({post}) => {
-
+const PostComments: FC<PostCommentsProps> = ({ post }) => {
     const [showComments, setShowComments] = useState<boolean>(false);
-    const {currentPostComments, subscribeToPostCommentsUpdate, unSubscribeToPostCommentsUpdate} = usePostComments(post);
+    const {
+        currentPostComments,
+        subscribeToPostCommentsUpdate,
+        unSubscribeToPostCommentsUpdate,
+    } = usePostComments(post);
 
     //subscribe on comments update
     useEffect(() => {
@@ -19,24 +25,24 @@ const PostComments: FC<PostCommentsProps> = ({post}) => {
         subscribeToPostCommentsUpdate();
 
         return () => {
-            unSubscribeToPostCommentsUpdate()
-        }
-    }, [showComments])
+            unSubscribeToPostCommentsUpdate();
+        };
+    }, [showComments]);
 
     return (
         <>
             <Button
-                onClick={() => setShowComments(prevState => !prevState)}
+                onClick={() => setShowComments((prevState) => !prevState)}
                 aria-controls="example-collapse-text"
                 aria-expanded={showComments}
                 variant="light"
-                className='dropdown-toggle w-25 m-2'
+                className="dropdown-toggle w-25 m-2"
             >
                 Комменатрии
             </Button>
             <Collapse in={showComments}>
                 <div id="example-collapse-text">
-                    <CommentsList currentPostComments={currentPostComments}/>
+                    <CommentsList currentPostComments={currentPostComments} />
                 </div>
             </Collapse>
         </>

@@ -10,14 +10,14 @@ export interface User {
         zipcode: string;
         geo: {
             lat: string;
-            lng: string
-        }
+            lng: string;
+        };
     };
     phone: string;
     website: string;
     company: {
         name: string;
         catchPhrase: string;
-        bs: string
-    }
+        bs: string;
+    };
 }

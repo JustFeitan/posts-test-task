@@ -1,6 +1,6 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
-import {Post, QueryParams, UserPostsRequest} from "@models";
 
+import { Post, QueryParams, UserPostsRequest } from "@models";
 
 export interface PostsState {
     posts: Post[] | null;
@@ -20,11 +20,11 @@ export const postsSlice = createSlice({
     name: "posts",
     initialState,
     reducers: {
-        setPosts: (state, {payload}: PayloadAction<Post[]>) => {
+        setPosts: (state, { payload }: PayloadAction<Post[]>) => {
             state.posts = payload;
             state.isLoading = false;
         },
-         setPagesArray: (state, {payload}: PayloadAction<number[]>) => {
+        setPagesArray: (state, { payload }: PayloadAction<number[]>) => {
             state.pagesArray = payload;
             state.isLoading = false;
         },
@@ -32,16 +32,20 @@ export const postsSlice = createSlice({
         setPostsLoading: (state) => {
             state.isLoading = true;
         },
-        setPostsError: (state, action: PayloadAction<Error | null | string>) => {
+        setPostsError: (
+            state,
+            action: PayloadAction<Error | null | string>
+        ) => {
             state.error = action.payload;
             state.isLoading = false;
         },
-        getPostsByTitleSearch: (state, action: PayloadAction<QueryParams>) => {
-
-        },
-        getUserPostsByUserId: (state, action: PayloadAction<UserPostsRequest>) => {
-
-        },
-
+        getPostsByTitleSearch: (
+            state,
+            action: PayloadAction<QueryParams>
+        ) => {},
+        getUserPostsByUserId: (
+            state,
+            action: PayloadAction<UserPostsRequest>
+        ) => {},
     },
 });

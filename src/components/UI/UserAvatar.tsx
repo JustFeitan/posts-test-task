@@ -1,20 +1,26 @@
-import React, {FC} from 'react';
-import {Image, ImageProps} from "react-bootstrap";
+import React, { FC } from "react";
+import { Image, ImageProps } from "react-bootstrap";
 
-interface UserAvatarProps extends ImageProps{
+interface UserAvatarProps extends ImageProps {
     image: string;
-    size?: number
+    size?: number;
 }
 
-const UserAvatar: FC<UserAvatarProps> = ({image, size = 90, ...props}) => {
-
+const UserAvatar: FC<UserAvatarProps> = ({ image, size = 90, ...props }) => {
     const avatarSize = {
-        height: size + 'px',
-        width: size + 'px',
-    }
+        height: size + "px",
+        width: size + "px",
+    };
 
     return (
-        <Image className='p-0 mx-2' src={image} alt='avatar' roundedCircle {...props} style={avatarSize}/>
+        <Image
+            className="p-0 mx-2"
+            src={image}
+            alt="avatar"
+            roundedCircle
+            {...props}
+            style={avatarSize}
+        />
     );
 };
 

@@ -1,7 +1,7 @@
-import {Comment} from "@models/Comment";
+import { Comment } from "@models/Comment";
 
 export interface CommentsData {
-    postId: number
+    postId: number;
     comments: Comment[];
     isLoading: boolean;
     error: string;

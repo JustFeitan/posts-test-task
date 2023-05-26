@@ -17,7 +17,7 @@ Netify): [https://posts-test-task.netlify.app](https://posts-test-task.netlify.a
 1. `git clone https://github.com/JustFeitan/posts-test-task.git`;
 2. `npm i`
 3. `npm start`
-4.  Перейти на `https://localhost:3000`
+4. Перейти на `https://localhost:3000`
 
 ## Техническое задание:
 
@@ -35,20 +35,22 @@ Netify): [https://posts-test-task.netlify.app](https://posts-test-task.netlify.a
 
 ### Front-end:
 
-- React
-- React-bootstrap
-- React-router
-- Axios
-- Redux + Redux Toolkit
-- Redux-saga
-- Typescript
-- jest/React Testing Library
-- Git
+-   React
+-   React-bootstrap
+-   React-router
+-   Axios
+-   Redux + Redux Toolkit
+-   Redux-saga
+-   Git
+-   Typescript
+-   jest/React Testing Library
+-   Prettier
+
 
 ### Сборка:
 
-- Webpack
-- Docker
+-   Webpack
+-   Docker
 
 ## Available Scripts
 

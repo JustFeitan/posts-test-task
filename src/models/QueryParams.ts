@@ -1,9 +1,9 @@
-import {SortingOrder} from "@models/SortingOrder";
+import { SortingOrder } from "@models/SortingOrder";
 
 export interface QueryParams {
     page: number;
     limit?: number;
-    sort?:string;
+    sort?: string;
     order?: SortingOrder;
-    like?: string
+    like?: string;
 }

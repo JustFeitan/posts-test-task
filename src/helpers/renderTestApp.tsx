@@ -1,12 +1,14 @@
 /**@jest-environment jsdom
  *
  */
-import React, {JSX} from "react";
-import {AppStore, setStore} from "@store";
-import {Provider} from "react-redux";
-import {MemoryRouter} from "react-router-dom";
+import { render } from "@testing-library/react";
+import React, { JSX } from "react";
+import { Provider } from "react-redux";
+import { MemoryRouter } from "react-router-dom";
+
+import { AppStore, setStore } from "@store";
+
 import AppRouter from "../routing/AppRouter";
-import {render} from "@testing-library/react";
 
 interface renderTestAppOptions {
     route?: string;
@@ -17,12 +19,12 @@ export const renderTestApp = (
     component?: JSX.Element | null,
     params?: renderTestAppOptions
 ) => {
-    const store = setStore(params?.initialReduxState)
+    const store = setStore(params?.initialReduxState);
     return render(
-        <MemoryRouter initialEntries={[params.route || '/']}>
+        <MemoryRouter initialEntries={[params.route || "/"]}>
             <Provider store={store}>
-                <AppRouter/>
+                <AppRouter />
             </Provider>
         </MemoryRouter>
-    )
-}
+    );
+};

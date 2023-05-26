@@ -1,3 +1,4 @@
-import {AppStore} from "@store";
+import { AppStore } from "@store";
 
-export const userSelector = (state: Partial<AppStore>) => state?.userReducer || null
+export const userSelector = (state: Partial<AppStore>) =>
+    state?.userReducer || null;

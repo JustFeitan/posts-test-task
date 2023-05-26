@@ -1,18 +1,14 @@
-@use 'styles/normalize';
+@use "styles/normalize";
 @use "styles/_variables.scss";
 @import "~bootstrap/scss/bootstrap";
 
-
-
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-  font-family: "RF Tone Regular", sans-serif;
-  background: #f4f4f4;
+    font-family: "RF Tone Regular", sans-serif;
+    background: #f4f4f4;
 }
-

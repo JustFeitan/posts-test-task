@@ -1,6 +1,6 @@
-import {QueryParams} from "@models/QueryParams";
+import { QueryParams } from "@models/QueryParams";
 
-export interface UserPostsRequest{
+export interface UserPostsRequest {
     userId: number;
-    queryParams?: QueryParams
+    queryParams?: QueryParams;
 }

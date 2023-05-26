@@ -1,0 +1,15 @@
+{
+    "tabWidth": 4,
+    "importOrder": [
+        "^@components(.*)$",
+        "^@hooks(.*)$",
+        "^@store(.*)$",
+        "^@services(.*)$",
+        "^@models(.*)$",
+        "^[./]"
+    ],
+    "importOrderSeparation": true,
+    "importOrderSortSpecifiers": true,
+    "singleQuote": false,
+    "trailingComma": "es5"
+}
